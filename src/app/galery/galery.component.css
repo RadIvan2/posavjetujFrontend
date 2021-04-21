@@ -1,0 +1,64 @@
+.pitanje {
+    background-color: white;
+    padding: 15px 15px 15px 15px;
+    border-radius: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+}
+
+.dugme {
+    color: white;
+    width: 200px;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin-top: 15px;
+    background: linear-gradient(to left bottom, #0f00fc, #6b00e5, #8c00cf, #9f00bb, #aa03aa);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.kat ul {
+    list-style: none;
+    margin-left: 0px;
+}
+
+.dropdown {
+    color: #8c00cf;
+    width: 200px;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin-top: 15px;
+    background: white;
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.dropdown-toggle {
+    padding: 10px 2px 10px 2px;
+    color: #8c00cf;
+}
+
+.dropdown-menu {
+    justify-content: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+    border-radius: 20px;
+    width: 200px;
+}
+
+.modal .modal-content {
+    overflow: hidden;
+}
+
+.modal-body {
+    max-height: 350px;
+    overflow-y: scroll;
+}

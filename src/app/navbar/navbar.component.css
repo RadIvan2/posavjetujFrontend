@@ -1,0 +1,114 @@
+header {
+    font-family: Comfortaa;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    height: 90px;
+    padding: 0 40px;
+}
+
+header .logo {
+    font-family: Comfortaa;
+    font-weight: 700;
+    font-size: 1.5em;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+}
+
+li {
+    text-decoration: none;
+    padding-right: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+li a {
+    text-decoration: none;
+    display: flex;
+    color: white;
+}
+
+.menu-btn {
+    background: rgba(255, 255, 255, .3);
+    padding: 15px 15px;
+    border-radius: 20px;
+    width: 200px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav {
+    background: rgba(255, 255, 255, .3);
+    border-radius: 20px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropdown {
+    padding: 0px;
+}
+
+.dropdown-toggle {
+    color: #8c00cf;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border-radius: 20px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropdown-toggle:link {
+    color: #8c00cf;
+    background: none;
+}
+
+.dropdown-toggle:visited {
+    color: #8c00cf;
+    background: none;
+}
+
+.dropdown-toggle:hover {
+    color: #8c00cf;
+    background: none;
+}
+
+.dropdown-toggle:active {
+    color: #8c00cf;
+    background: none;
+}
+
+.dropdown-menu {
+    justify-content: center;
+    background: none;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 20px;
+    width: 200px;
+}
+
+.dropdown-menu li a {
+    padding-right: 0px;
+}
+
+.nav .open>a {
+    background: none;
+}
+
+.dropdown-menu a:hover {
+    color: #8c00cf;
+    background: none;
+}

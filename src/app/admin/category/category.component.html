@@ -1,0 +1,87 @@
+<div class="dugme">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="onShowModal()">
+        Dodaj kategoriju
+    </button>
+</div>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Ime</th>
+            <th scope="col">Opis</th>
+            <th scope="col">Akcije</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let category of categories">
+            <th scope="row"> {{category.id}} </th>
+            <td> {{category.name}} </td>
+            <td> {{category.description}} </td>
+            <td>
+                <a class="glyphicon glyphicon-pencil" (click)="onShowModal2(category.id,category.name,category.description)"></a>
+                <a class="glyphicon glyphicon-remove" (click)="onRemove(category.id)"></a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Modal -->
+<div class="modal" [ngClass]="{'show':showModal}" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Nova kategorija</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          </button>
+            </div>
+            <div class="modal-body">
+                <form #categoryForm="ngForm">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Ime kategorije</label>
+                        <input type="text" class="form-control" name="name" [ngModel]="name">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Opis vase kategorije" name="description" [ngModel]=description> </textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="onModalClose()">Zatvori</button>
+                <button type="button" class="btn btn-primary" (click)="onAdd(categoryForm)">Dodaj kategoriju</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal no.2-->
+<div class="modal" [ngClass]="{'show':showModal2}" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Promijenite kategoriju</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          </button>
+            </div>
+            <div class="modal-body">
+                <form #categoryForm2="ngForm">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">ID kategorije:</label>
+                        <input type="text" class="form-control" name="id" [ngModel]="id" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Ime kategorije</label>
+                        <input type="text" class="form-control" name="name" [ngModel]="name">
+                    </div>
+                    <div class="form-group ">
+                        <textarea class="form-control " id="exampleFormControlTextarea1 " rows="5 " name="description" placeholder="Opis vase kategorije " [ngModel]="description"> </textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer ">
+                <button type="button " class="btn btn-secondary " data-dismiss="modal " (click)="onModalClose() ">Zatvori</button>
+                <button type="button " class="btn btn-primary " (click)="onUpdate(categoryForm2,id) ">Sacuvaj kategoriju</button>
+            </div>
+        </div>
+    </div>
+</div>

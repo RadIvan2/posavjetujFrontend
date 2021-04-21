@@ -1,0 +1,117 @@
+.container {
+    font-family: Comfortaa;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+#home {
+    height: calc(100 vh - 90px);
+    overflow: hidden;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+#home .info {
+    width: 50%;
+    padding-bottom: 140px;
+}
+
+#home .info h1 {
+    font-size: 5rem;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 2rem;
+}
+
+#home .info h4 {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: white;
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+}
+
+#home .info .dugme {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.pitaj {
+    background: white;
+    padding: 20px 20px;
+    border-radius: 30px;
+    width: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #9f00bb;
+    font-weight: 500;
+    font-size: 0.9 rem;
+    border: none;
+}
+
+.pitaj:focus {
+    outline: none;
+}
+
+.photos {
+    padding-top: 150px;
+    margin-bottom: 330px;
+    width: 50%;
+    position: relative;
+    height: 450px;
+}
+
+.prof {
+    position: absolute;
+    width: 300px;
+    height: 450px;
+    z-index: 1;
+    transform: translate3d(0, -200px, 0);
+}
+
+.male {
+    position: absolute;
+    width: 300px;
+    height: 380px;
+    z-index: 2;
+    transform: translate3d(200px, 100px, 0);
+}
+
+.shape1 {
+    width: 250px;
+    height: 350px;
+    border: 3px dashed white;
+    transform: translate3d(150px, 0, 0);
+}
+
+.shape2 {
+    width: 80px;
+    height: 80px;
+    border: 3px dashed white;
+    margin: 3px 0 0 30px;
+    /* Rotate */
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    /* Rotate Origin */
+    -webkit-transform-origin: 0 100%;
+    -moz-transform-origin: 0 100%;
+    -ms-transform-origin: 0 100%;
+    -o-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+}
+
+.proj {
+    color: white;
+    text-align: center;
+}
+
+.checkbox input[type=checkbox] {
+    margin-left: 0px;
+}

@@ -1,0 +1,61 @@
+<div class="button-box">
+    <div id="btn"></div>
+    <button type="button" class="toggle-btn" (click)="answeredQuestions()">Odgovorena pitanja</button>
+    <button type="button" class="toggle-btn" (click)="unansweredQuestions()">Neogovorena pitanja</button>
+</div>
+
+<div class="pitanje" *ngFor="let question of questions">
+    <p>{{question.content}}</p>
+    <div class="btns">
+        <p><a *ngIf="(odg)" class="dugme" role="button" (click)="showAnswer(question,question.answers)">Prikazi odgovor</a></p>
+        <p><a class="dugme desno" role="button" (click)="onAddAnswer(question.id,question)">Dodaj odgovor</a></p>
+        <p><a class="dugme desno" role="button" (click)="onDeleteQuest(question.id)">Obrisi pitanje</a></p>
+    </div>
+</div>
+
+
+<!--Modal showing answers-->
+<div class="modal bd-example-modal-lg" [ngClass]="{'show':showModal}" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title pitanje" id="exampleModalLabel">{{selectedQuestion}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          </button>
+            </div>
+            <div class="modal-body">
+                <div class="pitanje" *ngFor="let ans of selectedAnswer">
+                    <p>Odgovor:</p>
+                    <p>{{ans}}</p>
+                    <hr>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="onModalClose()">Zatvori</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--Modal answering-->
+<div class="modal bd-example-modal-lg" [ngClass]="{'show':showModal2}" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title pitanje" id="exampleModalLabel">{{selectedQuestion}}</h5>
+            </div>
+            <div class="modal-body">
+
+                <div class="form-group">
+                    <label for="message-text" class="col-form-label">Vas odgovor:</label>
+                    <textarea id="answ" [(ngModel)]="answ" class="form-control" id="message-text"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="addAnswer()">Objavi</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="onModalClose()">Zatvori</button>
+            </div>
+        </div>
+    </div>
+</div>

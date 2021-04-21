@@ -1,0 +1,39 @@
+<div class="kat">
+    <ul>
+        <li class="dropdown" [ngClass]="{'open':isExpanded}" (click)="toggleDropdown(isExpanded)">
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Kategorije<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li (click)="getAllQuest()">Sve kategorije</li>
+                <li *ngFor="let category of categories" (click)="getQuestByCat(category.id)">{{category.name}}</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div class="pitanje" *ngFor="let question of questions">
+    <p>{{question.content}}</p>
+    <p><a class="dugme" (click)="showAnswer(question,question.answers)" role="button">Prikazi odgovor</a></p>
+</div>
+
+
+<div class="modal bd-example-modal-lg" [ngClass]="{'show':showModal}" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title pitanje" id="exampleModalLabel">{{selectedQuestion}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          </button>
+            </div>
+            <div class="modal-body">
+                <div class="pitanje" *ngFor="let ans of selectedAnswer">
+                    <p>Odgovor:</p>
+                    <p>{{ans}}</p>
+                    <hr>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="onModalClose()">Zatvori</button>
+            </div>
+        </div>
+    </div>
+</div>

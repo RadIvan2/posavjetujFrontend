@@ -1,0 +1,69 @@
+.button-box {
+    background-color: #0f00fc;
+    width: 435px;
+    position: relative;
+    box-shadow: 0 0 0px 2px rgba(253, 253, 253, 0.788);
+    border-radius: 30px;
+}
+
+.toggle-btn {
+    color: white;
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+
+#btn {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 200px;
+    height: 100%;
+    background: linear-gradient(to left bottom, #0f00fc, #6b00e5, #8c00cf, #9f00bb, #aa03aa);
+    border-radius: 30px;
+    transition: .5s;
+}
+
+.pitanje {
+    background-color: white;
+    padding: 15px 15px 15px 15px;
+    border-radius: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+}
+
+.dugme {
+    color: white;
+    width: 200px;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin-top: 15px;
+    background: linear-gradient(to left bottom, #0f00fc, #6b00e5, #8c00cf, #9f00bb, #aa03aa);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.modal .modal-content {
+    overflow: hidden;
+}
+
+.modal-body {
+    max-height: 350px;
+    overflow-y: scroll;
+}
+
+.btns {
+    display: flex;
+    flex-direction: row;
+}
+
+.desno {
+    margin-left: 5px;
+}

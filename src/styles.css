@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css?family=Comfortaa');
+body {
+    background-image: linear-gradient(to left bottom, #0f00fc, #6b00e5, #8c00cf, #9f00bb, #aa03aa);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}

@@ -1,0 +1,84 @@
+.form-box {
+    font-family: Comfortaa;
+    width: 380px;
+    height: 480px;
+    position: relative;
+    margin: 8.2%auto;
+    background: white;
+    padding: 5px;
+    overflow: hidden;
+}
+
+.button-box {
+    background-color: #0f00fc;
+    width: 280px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 0px 7px #0707071f;
+    border-radius: 30px;
+}
+
+.toggle-btn {
+    color: white;
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+
+#btn {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 130px;
+    height: 100%;
+    background: linear-gradient(to left bottom, #0f00fc, #6b00e5, #8c00cf, #9f00bb, #aa03aa);
+    border-radius: 30px;
+    transition: .5s;
+}
+
+.input-group {
+    top: 180px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+
+#register {
+    top: 100px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-bottom: 2px solid black;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    outline: none;
+    background: transparent;
+}
+
+.submit-btn {
+    color: white;
+    width: 280px;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin-top: 15px;
+    background: linear-gradient(to left bottom, #0f00fc, #6b00e5, #8c00cf, #9f00bb, #aa03aa);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}
+
+#login {
+    left: 50px;
+}
+
+#register {
+    left: 450px;
+}

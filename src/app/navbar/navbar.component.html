@@ -1,0 +1,24 @@
+<header>
+    <div class="logo">
+        Online Savjetovaliste
+    </div>
+    <div class="menu">
+        <li *ngFor="let link of links">
+            <a routerLink="{{link.url}}">{{ link.name }}</a>
+        </li>
+        <li *ngIf="!(isAuthenticated | async); else profileTemplate"><a routerLink="ulogujse" class="menu-btn">Uloguj se</a></li>
+        <ng-template #profileTemplate>
+            <ul class="nav">
+                <li class="dropdown" [ngClass]="{'open':isExpanded}" (click)="toggleDropdown(isExpanded)">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Podesavanja<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a routerLink="/profil">Profil</a></li>
+                        <li><a routerLink="/admin">Administracija</a></li>
+                        <hr>
+                        <li><a (click)="onLogOut()">Odjavi se</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </ng-template>
+    </div>
+</header>

@@ -1,0 +1,16 @@
+.table {
+    background-color: white;
+    border-radius: 5px;
+}
+
+a {
+    cursor: pointer;
+}
+
+.glyphicon-remove {
+    margin-left: 10px;
+}
+
+.btn-primary {
+    margin-bottom: 10px;
+}

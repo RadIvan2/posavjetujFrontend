@@ -1,0 +1,18 @@
+version: '3.2'
+
+services: 
+  academy-web:
+    build: 
+      context: .
+      dockerfile: web.dockerfile
+    image: academy/demo:web
+    ports: 
+      - "80:80"
+    container_name: academy_web
+    restart: always
+    networks: 
+      - academynetwork
+
+networks: 
+  academynetwork:
+

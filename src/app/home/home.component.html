@@ -1,0 +1,63 @@
+<div class="container">
+    <section id="home">
+        <div class="info">
+            <h1>Dobrodosli u Online Savjetovaliste</h1>
+            <h4>Bezbjedan online prostor gdje mozete anonimno zatraziti savjet za svoj problem</h4>
+            <div class="dugme">
+                <button type="button" class="pitaj" data-toggle="modal" data-target="#exampleModal" (click)="onShowModal()">
+                    Postavite pitanje
+                </button>
+            </div>
+        </div>
+        <div class="photos">
+            <img class="prof" src="../../assets/images/pexels-cottonbro-4098148.jpg">
+            <img class="male" src="../../assets/images/pexels-martin-péchy-594610.jpg">
+            <div class="shape1"></div>
+        </div>
+        <div class="shape2"></div>
+    </section>
+</div>
+
+<!--MODAL-->
+<div class="modal" [ngClass]="{'show':showModal}" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Postavite pitanje</h5>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <label>Izaberite kategoriju   </label>
+                    <select class="form-control" id="mySelect" (change)="selectedOption($event.target.value)" [(ngModel)]="selected">
+                        <option *ngFor="let category of categories" name="selectCategory" [value]="category.id">{{category.name}}</option>
+                      </select>
+                </div>
+                <div>
+                    <label for="exampleFormControlTextarea1">Vase pitanje:</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Unesite pitanje..." name="content" [(ngModel)]="content"></textarea>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" (click)="onSend()">Postavi pitanje</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="onModalClose()">Zatvori</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="proj">
+    <div>
+        <div class="container">
+            <h2>O projektu</h2>
+            <p class="lead">Ovim projektom želimo da podstaknemo mlade ljude da bez straha govore o svojim problemima i da nauče da traže pomoć.</p>
+            <p>Sticanje znanja o otvorenoj komunikaciji i uspješna implementacija istih će u krajnosti doprinjeti formiranju individue koja razvija zdrave odnose sa drugim ljudima. Tako bi došlo do osnivanja zdravih i sigurnih porodica i uspjeha na licnom
+                i karijernom polju</p>
+            <p>Sticanje znanja o otvorenoj komunikaciji i uspješna implementacija istih će u krajnosti doprinjeti formiranju individue koja razvija zdrave odnose sa drugim ljudima. Tako bi došlo do osnivanja zdravih i sigurnih porodica i uspjeha na licnom
+                i karijernom polju Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+    </div>
+</div>

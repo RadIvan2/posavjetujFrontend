@@ -1,0 +1,102 @@
+<div class="dugme">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="onAddUser()">
+        Dodaj korisnika
+    </button>
+</div>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Korisnicko ime</th>
+            <th scope="col">Ime</th>
+            <th scope="col">Prezime</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">Uloga</th>
+            <th scope="col">Akcije</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <th scope="row"> {{user.id}} </th>
+            <td> {{user.username}} </td>
+            <td> {{user.name}} </td>
+            <td> {{user.surname}} </td>
+            <td> {{user.email}} </td>
+            <td> {{getUserRoles(user)}} </td>
+            <td>
+                <a class="glyphicon glyphicon-user" (click)="onShowModal(user)"></a>
+                <a class="glyphicon glyphicon-remove" (click)="onRemove(user .id)"></a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<!-- Modal -->
+<div class="modal" [ngClass]="{'show':showModal2}" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Novi korisnik</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          </button>
+            </div>
+            <div class="modal-body">
+                <form #userForm="ngForm">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Korisnicko ime</label>
+                        <input type="text" class="form-control" name="username" [ngModel]="username">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Sifra</label>
+                        <input type="text" class="form-control" name="password" [ngModel]="password">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Ime</label>
+                        <input type="text" class="form-control" name="name" [ngModel]="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Prezime</label>
+                        <input type="text" class="form-control" name="surname" [ngModel]="surname">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">E-mail</label>
+                        <input type="text" class="form-control" name="email" [ngModel]="email">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="onModalClose()">Zatvori</button>
+                <button type="button" class="btn btn-primary" (click)="addUser(userForm)">Dodaj korisnika</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--Modal-->
+
+<div class="modal" [ngClass]="{'show':showModal}" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">{{selectedUsername}}</h5>
+            </div>
+            <div class="modal-body">
+                <div *ngFor="let role of allRoles">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" (click)="isClicked(role)">
+                        <label class="form-check-label">{{role.name.replace('ROLE_','')}}</label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="onModalClose()">Zatvori</button>
+                <button type="button" class="btn btn-primary" (click)="saveUser()">Sacuvaj</button>
+            </div>
+        </div>
+    </div>
+</div>

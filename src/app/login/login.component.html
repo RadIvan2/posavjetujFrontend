@@ -1,0 +1,22 @@
+<div class="form-box">
+    <div class="button-box">
+        <div id="btn"></div>
+        <button type="button" class="toggle-btn" (click)="toLogin()">Uloguj se</button>
+        <button type="button" class="toggle-btn" (click)="toRegister()">Registruj se </button>
+
+    </div>
+    <form id="login" class="input-group">
+        <input type="text" class="input-field" placeholder="Unesi korisnicko ime" name="username" [(ngModel)]="username" required>
+        <input type="password" class="input-field" placeholder="Unesi sifru" name="password" [(ngModel)]="password" required>
+        <button type="button" class="submit-btn" (click)="onLogin()">Uloguj se</button>
+    </form>
+    <form #registerForm="ngForm" id="register" class="input-group">
+        <p>Novi si korisnik?</p>
+        <input type="text" class="input-field" placeholder="Unesi korisnicko ime" required name="username" [(ngModel)]="username" required>
+        <input type="password" class="input-field" placeholder="Unesi sifru" required name="password" [(ngModel)]="password" required>
+        <input type="text" class="input-field" placeholder="Unesi ime" name="name" [(ngModel)]="name" required>
+        <input type="text" class="input-field" placeholder="Unesi prezime" name="surname" [(ngModel)]="surname" required>
+        <input type="text" class="input-field" placeholder="Unesi E-mail" name="email" [(ngModel)]="email" required>
+        <button type="button" class="submit-btn" (click)="onRegistrujSe(registerForm)">Registruj se</button>
+    </form>
+</div>
